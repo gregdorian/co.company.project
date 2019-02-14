@@ -43,7 +43,7 @@ namespace co.company.Business
             _facturaDetalle = new List<FacturaDetalle>();
         }
 
-        public void AddFacturaDetalle(int IdProducto, string CodigoProducto, string DescripcionProducto, decimal unitPrice, decimal Descuento, int Cantidad = 1)
+        public void AddFacturaDetalle(int IdProducto, string CodigoProducto, string DescripcionProducto, decimal Precio, decimal Descuento, short Cantidad = 1)
         {
             var existingDetalleForProduct = _facturaDetalle.Where(o => o.IdProducto == IdProducto)
                 .SingleOrDefault();
@@ -58,19 +58,21 @@ namespace co.company.Business
                 //}
 
                 //existingOrderForProduct.AddUnits(units);
+                throw new Exception();
             }
             else
             {
                 //add validated new order item
 
-                var orderItem = new FacturaDetalle(productId, productName, unitPrice, discount, pictureUrl, units);
-                _orderItems.Add(orderItem);
+                var orderItem = new FacturaDetalle(IdProducto, CodigoProducto, DescripcionProducto, Precio, Descuento, Cantidad);
+                _facturaDetalle.Add(orderItem);
             }
         }
 
         public decimal GetTotal()
         {
-            return _orderItems.Sum(o => o.GetUnits() * o.GetUnitPrice());
+            //return _facturaDetalle.Sum(o => o.GetUnits() * o.GetUnitPrice());
+            return _facturaDetalle.Sum(o =>  o.Cantidad * o.Precio);
         }
     }
 }
