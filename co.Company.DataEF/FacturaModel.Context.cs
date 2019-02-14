@@ -25,7 +25,12 @@ namespace co.Company.DataEF
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        public object Entry()
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<FacturaDetalle> FacturaDetalle { get; set; }
         public virtual DbSet<FacturaEncabezado> FacturaEncabezado { get; set; }

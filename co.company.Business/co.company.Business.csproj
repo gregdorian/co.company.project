@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticateUser.cs" />
+    <Compile Include="ClientesBS.cs" />
+    <Compile Include="FacturaBS.cs" />
+    <Compile Include="ProductoBS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

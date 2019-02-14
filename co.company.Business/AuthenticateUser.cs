@@ -9,9 +9,12 @@ namespace co.company.Business
 {
     public class AuthenticateUser
     {
-        public string Usuario { get; set; }
+        private readonly FacturaConex dbCtx;
 
-        public string Password { get; set; }
+        public AuthenticateUser(FacturaConex db)
+        {
+            dbCtx = db;
+        }
 
 
         public static bool IngresoApp(string user, string pass)

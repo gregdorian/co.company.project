@@ -25,5 +25,15 @@ namespace co.company.Entities
     
         public virtual FacturaEncabezado FacturaEncabezado { get; set; }
         public virtual Productos Productos { get; set; }
+
+        //protected FacturaDetalle()
+        //{
+
+        //}
+
+        public FacturaDetalle(int IdProducto, string CodigoProducto, string DescripcionProducto, decimal PrecioUnitario, decimal Descuento, int Cantidad = 1)
+        {
+
+        }
     }
 }
